@@ -1,0 +1,123 @@
+﻿@model SchoolWebApp.Models.TimeTables
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="thumbnail" style="padding-bottom:100px;padding-right:0px ;">
+    <div style="background:url('../../Content/images/about_schools.jpg') center ;height:200px;">
+    </div>
+
+    <div class="col-md-12" style="background-color:lavender; margin-top:5px;padding-top:5px; height:50px;">
+
+        <h2 style="text-align:center">
+            <span class="glyphicon glyphicon-edit"></span>
+            تعديل الصنف   &nbsp;&nbsp;
+        </h2>
+
+    </div>
+
+
+    @using (Html.BeginForm("Edit", "TimeTables", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div style="padding-right:100px ; text-align: right;">
+            <h4 style="color:black ;">
+                <span class="glyphicon glyphicon-info-sign"></span>&nbsp;  المعلومات الأساسية:
+            </h4>                    <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.TableTitleURL)
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TableTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TableTitle, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TableTitle, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TableTitleDetails, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TableTitleDetails, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TableTitleDetails, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TableTitleURL, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" name="file" id="upload-file" />
+                    @Html.ValidationMessageFor(model => model.TableTitleURL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TableTitleDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TableTitleDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TableTitleDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TimeTablesTypesId, "TimeTablesTypesId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("TimeTablesTypesId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TimeTablesTypesId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10" style="padding-bottom:10px">
+                    <input type="submit" value="حفظ التغييرات" class="btn btn-success smoothScroll" />
+                </div>
+            </div>
+        </div>
+    }
+    <p class="col-md-2 btn-lg btn-primary" role="button" style="margin-right:10px">
+
+        <span class="glyphicon glyphicon-share-alt"></span>
+        @Html.ActionLink("العودة إلى القائمة", "Index", null, new { @style = "color:black;font-weight:500" })
+
+    </p>
+</div>
+
+
+
+@section scripts{
+
+    <script>
+
+        $(function () {
+            $("#save").click(function () {
+                if ($("#upload-file").val() != "") {
+                    $("#ErrorDiv").fadeIn();
+                    var filename = document.getElementById("upload-file").value;
+                    var extensionImg = filename.substr(filename.lastIndexOf('.') + 1);
+                    var validextention = ['pdf', 'docx', 'doc'];
+                    if ($.inArray(extensionImg, validextention) == -1) {
+
+                        $("#ErrorDiv").fadeIn();
+                        $("#error").append("قم بتحميل صورة مناسبة للخبر");
+                        return false;
+                    }
+                    var filesize = document.getElementById("upload-file").files[0].size / 1024 / 1024;
+                    if (filesize > 4) {
+
+                        $("#ErrorDiv").fadeIn();
+                        $("#error").append("هذه الصورة ذات حجم كبير.");
+                        return false;
+                    }
+                }
+
+
+            });
+
+
+        });
+    </script>
+}

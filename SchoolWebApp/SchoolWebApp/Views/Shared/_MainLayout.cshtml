@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="ar-sy" style="direction:rtl">
+<head>
+    <title>@ViewBag.Title</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //for-mobile-apps -->
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <!--banner slider  -->
+    <link href="~/Content/css/JiSlider.css" rel="stylesheet" />
+    <script src="~/Scripts/js/JiSlider.js"></script>
+    <!-- //banner-slider -->
+    <link href="~/Content/css/flexslider.css" rel="stylesheet" media="screen" />
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="//fonts.googleapis.com/css?family=Oswald:400,500,600,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
+    <!-- header -->
+    <section class="w3layouts-header py-2" style="height:50px; margin:0px">
+        <div class="container" style="direction:rtl">
+            <!-- header -->
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary " style="padding:0px;">
+                    <h1 style="float:right ;">
+                        <a class="navbar-brand" style="padding-bottom:5px" href="../Home/Index">
+                            AIS
+                        </a>
+                    </h1>
+                    <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon" style="height:20px"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        @Html.Partial("_LoginPartial")
+
+                    </div>
+
+                    <div id="navbar" class="collapse navbar-collapse ">
+
+                    </div>
+                </nav>
+            </header>
+        </div>
+
+
+        <!-- //header -->
+
+    </section>
+    <!-- //header -->
+    <div class="container" style="background-color:white">
+
+        @RenderBody()
+
+
+    </div>
+    <!-- Footer -->
+    <footer class="footer-section py-5" dir="rtl" style="text-align:right">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 footer-grids">
+                    <h3>تواصل معنا</h3>
+                    <p>
+                        الياسمين -شارع جبل عرفات
+                    </p>
+                    <p class="my-2"> عمان-الأردن</p>
+                    <p class="phone">الهاتف: 962062006896</p>
+                    <p class="phone my-2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  962-0797902497</p>
+                    <p class="phone">
+                        البريد الإلكتروني
+                        <a href="mailto:Info@madaresonajo.com">Info@madaresonajo.com</a>
+                    </p>
+                </div>
+                <div class="col-lg-4 footer-grids">
+                    <h2>روابط هامة</h2>
+                    <br />
+                    <br />
+                    <div class="d-flex justify-content-around">
+                        <a  href="../Home/Services" class="col-4">
+                            <img src="~/Content/images/g1.jpg" class="img-fluid" alt="Responsive image">
+                        </a>
+                        <a href="../Home/News" class="col-4">
+                            <img src="~/Content/images/g2.jpg" class="img-fluid" alt="Responsive image">
+                        </a>
+                        <a href="../Home/Contact" class="col-4">
+                            <img src="~/Content/images/g3.jpg" class="img-fluid" alt="Responsive image">
+                        </a>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <a href="#" class="col-4">
+                            خدمات
+                        </a>
+                        <a href="#" class="col-4">
+أحدث الأخبار                        </a>
+                        <a href="#" class="col-4">
+تواصل معنا                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 footer-grids">
+                    <h3>تابعونا على الفيس بوك</h3>
+                    <div class="fb-page" data-href="https://web.facebook.com/AylaIntSchools/" data-tabs="timeline" data-width="300" data-height="156" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://web.facebook.com/AylaIntSchools/" class="fb-xfbml-parse-ignore"><a href="https://web.facebook.com/AylaIntSchools/">‎مدارس آيلا العالمية‎</a></blockquote></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //Footer -->
+    <!-- copyright -->
+    <section class="copyright-w3layouts py-xl-4 py-3">
+        <div class="container">
+            <p>
+                © 2018  All Rights Reserved | Design by
+            </p>
+            <ul class="social-nav footer-social social two text-center mt-2">
+                <li>
+                    <a href="https://web.facebook.com/princess.jabban">
+
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i> ( Ameera Jabban )
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- //copyright -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Attainment</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="agileits-w3layouts-info">
+                        <img src="~/Content/images/bg1.jpg" class="img-fluid" alt="" />
+                        <p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis porttitor quis. </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //Modal -->
+    <!-- js -->
+    <script src="~/Scripts/js/jquery-2.2.3.min.js"></script>
+    <!-- //js-->
+    <!--banner-slider-->
+    <script src="~/Scripts/js/JiSlider.js"></script>
+    <script>
+        $(window).load(function () {
+            $('#JiSlider').JiSlider({
+                color: '#fff',
+                start: 1,
+                reverse: false
+            }).addClass('ff')
+        })
+    </script>
+    <!-- //banner-slider -->
+    <!-- stats -->
+    <script src="~/Scripts/js/jquery.waypoints.min.js"></script>
+    <script src="~/Scripts/js/jquery.countup.js"></script>
+    <script>
+        $('.counter').countUp();
+    </script>
+    <!-- //stats -->
+    <!-- FlexSlider-JavaScript -->
+    <script src="~/Scripts/js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+    </script>
+    <!-- //FlexSlider-JavaScript -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/Scripts/js/bootstrap.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

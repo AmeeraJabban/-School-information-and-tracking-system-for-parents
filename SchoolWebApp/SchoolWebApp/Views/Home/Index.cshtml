@@ -1,0 +1,515 @@
+﻿
+@{
+    ViewBag.Title = "الصفحة الرئيسية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@{ if (!Request.IsAuthenticated)
+    {
+        <!-- banner -->
+        <section class="banner-silder">
+            <div id="JiSlider" class="jislider" style="background:url('../../Content/images/First-Day-of-School-Pictures_0301.jpg') ;opacity:0.9;background-size:cover ">
+                
+                        <div style="height:650px">
+                            <div class="container">
+                                <div class="banner-info info2">
+                                    <h3 style="font-size:30px; background-color:black;opacity:0.9;">مدرسة آيلا الدولية</h3>
+
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+
+                                    <p style="text-align:right;font-weight:bolder ; background-color:black;opacity:0.5">
+                                        نحن ملتزمون بتقديم خدمات التدريس على أعلى مستوى من الجودة ، والجمع بين الطاقة والحماس  ، مع سنواتنا
+                                        من الخبرة.  الارتياح لدينا يأتي في تدريس أعداد كبيرة من الطلاب تحت اشراف المدرسين الذين لديهم خبرة
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                   
+            </div>
+        </section>
+        <!-- //banner -->
+        <!-- banner bottom -->
+        <section class="banner-btm">
+            <div class="container" style=" margin-top: -6em; padding: 4em 3em;">
+                <div class="row banner-bottom-main bg-white">
+                    <div class="col-md-4 banner-grid2">
+                        <div class="banner-subg1">
+                            <h3 class="mt-3" style="text-align:right"><span class="fas fa-clock pr-3" aria-hidden="true"></span>ساعات العمل</h3>
+                            <p class="mt-3 pl-5">Sunday - thursday 09.00 - 18.00</p>
+                            <p class="pl-5">Saturday 09.00 - 14.00</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 banner-grid2">
+                        <div class="banner-subg1">
+                            <h3 class="mt-3" style="text-align:right"><span class="fas fa-phone pr-3" aria-hidden="true"></span> يمكنك الاتصال </h3>
+                            <p class="mt-3 pl-5">962-0797902497</p>
+                            <p class="pl-5">962-0790452034</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 banner-grid2">
+                        <div class="banner-subg1">
+                            <h3 class="mt-3" style="text-align:right"><span class="fas fa-envelope pr-3" aria-hidden="true"></span>تواصل معنا</h3>
+                            <p class="mt-3 pl-5">
+                                Email:     <a href="mailto:Info@madaresonajo.com">Info@madaresonajo.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //banner bottom -->
+        <!-- courses -->
+        <section class="wthree-row w3-about  py-5">
+            <div class="container py-md-4 mt-md-3">
+                <h5 class="heading-agileinfo" style="font-size:25px"> تتضمن مدرستنا </h5>
+                <div class="card-deck mt-md-5 pt-5">
+                    <div class="card">
+                        <img src="~/Content/images/s.jpg" class="img-fluid" alt="Card image cap">
+                        <div class="card-body w3ls-card" style="text-align:right">
+                            <h5 class="card-title">المرحلة الابتدائية</h5>
+                            <p class="card-text mb-3 ">
+                                يتميز قسم الابتدائي في مدرستنا بمبناه وصفوفه النموذجية والاساليب التفاعلية التي يتبعها كادرنا المميز.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="~/Content/images/s2.jpg" class="img-fluid" alt="Card image cap">
+                        <div class="card-body w3ls-card"  style="text-align:right">
+                            <h5 class="card-title">المرحلة الاعدادية</h5>
+                            <p class="card-text mb-3 ">
+                                يتميز قسم الاعدادي في مدرستنا بمبناه وصفوفه النموذجية والاساليب التفاعلية التي يتبعها كادرنا المميز.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="~/Content/images/S3.jpg" class="img-fluid" alt="Card image cap">
+                        <div class="card-body w3ls-card"  style="text-align:right">
+                            <h5 class="card-title">المرحلة الثانوية</h5>
+                            <p class="card-text mb-3 ">
+                                يتميز قسم الثانوي في مدرستنا بمبناه وصفوفه النموذجية والاساليب التفاعلية التي يتبعها كادرنا المميز.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //courses -->
+        <!-- prepare -->
+        <div class="prepare_wthree py-5">
+            <div class="container py-md-4 mt-md-3">
+                <div class="row prepare_top">
+                    <div class="col-lg-7 prepare_top_right">
+                        <h5 class="mb-3" style="text-align:right">لمحة مفيدة</h5>
+                        <h4 style="text-align:right">نحضر الطلاب قبل الاختبرات</h4>
+                        <p class="mt-3 mb-3" style="text-align:right">
+                            ما هي بعض من أفضل الطرق للتعلم؟ هل أنت مهتم بإيجاد طرق لتعلم أشياء جديدة بشكل أسرع؟ هل تريد أن تصبح متعلم أكثر فعالية وكفاءة؟ إذا كنت مثل العديد من الطلاب ، فإن وقتك محدود ، لذلك من المهم أن تحصل على أكثر قيمة تعليمية من الوقت المتاح لديك.
+
+                            سرعة التعلم ليست هي العامل الوحيد المهم ، ولكن. الإحتفاظ ، الاستدعاء ، والنقل مهمان أيضًا. بعد كل شيء ، ما الفائدة من تعلم معلومات جديدة إذا كنت لا تستطيع تذكرها أو الاستفادة منها بشكل فعال في وقت لاحق عندما تحتاج إليها؟ يجب أن يكون الطلاب قادرين على تذكر المعلومات التي يتعلمونها بدقة ، وأن يتذكروها في وقت لاحق ، ويستخدمونها بفعالية في مجموعة واسعة من المواقف.
+
+                        </p>
+                    </div>
+                    <div class="col-lg-5 prepare_top_left">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- //prepare -->
+
+        <!-- stats -->
+        <section class="stats  py-5">
+            <div class="container py-md-4 mt-md-3">
+                <h3 class="tittle-w3ls text-center mb-3">LET THE NUMBERS SPEAK FOR US</h3>
+                <div class="row inner_w3l_agile_grids-1 pt-4 mt-md-4">
+                    <div class="col-md-3 col-sm-6 w3layouts_stats_left w3_counter_grid">
+                        <p class="counter">@ViewBag.Students</p>
+                        <h3>STUDENTS</h3>
+                    </div>
+                    <div class="col-md-3 col-sm-6 w3layouts_stats_left w3_counter_grid1">
+                        <p class="counter">@ViewBag.subject</p>
+                        <h3>LEARNING PROGRAMS</h3>
+                    </div>
+                    <div class="col-md-3 col-sm-6 w3layouts_stats_left w3_counter_grid2">
+                        <p class="counter">2</p>
+                        <h3>LANGUAGES</h3>
+                    </div>
+                    <div class="col-md-3 col-sm-6 w3layouts_stats_left w3_counter_grid2">
+                        <p class="counter">@ViewBag.Teachers</p>
+                        <h3>TEACHERS</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //stats -->
+
+    }
+    else if (Request.IsAuthenticated && User.IsInRole("Admins"))
+    {
+
+        <div class="thumbnail" style="padding-bottom:100px;height:800px;padding-right:0px">
+            <div style="background:url('../../Content/images/about_schools.jpg') center ;height:200px;">
+            </div>
+
+            <div class="col-md-12" style="background-color:lavender; margin-top:5px;padding-top:5px; height:50px;">
+
+                <h2 style="text-align:center"><span class="glyphicon glyphicon-wrench"></span>
+                    إدارة
+                    الموقع &nbsp;&nbsp; 
+                </h2>
+
+            </div>
+
+
+
+            <div class="container" dir="rtl">
+                <div class="row" dir="rtl">
+                    <div class="col-md-3" style="padding-top:50px">
+                        <p class=" btn-lg btn-block btn-success" role="button" style="height:100px;width:200px; direction:rtl ;font-size:15px">
+                            <span class="glyphicon glyphicon-file" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("إدارة الجداول الزمنية", "../TimeTables/Index", null, new { @style = "color:black;font-weight:500 ;" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+                        <p class="btn-lg btn-block btn-primary" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-edit" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("إدارة أصناف جداول ", "../TimeTablesTypes/Index", null, new { @style = "color:black;font-weight:500;direction:rtl" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+                        <p class="btn-lg btn-block btn-secondary" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-picture" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("إدارة الصور", "../Photo1/Index", null, new { @style = "color:black;font-weight:500" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+                        
+                    </div>
+                    <div class="col-md-3 " style="padding-top:50px">
+                        <p class="btn-lg btn-block btn-warning" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-briefcase" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("إدارة المدرسين", "../AdminAddTeachers/Index", null, new { @style = "color:black;font-weight:500" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+                        <p class="btn-lg btn-block btn-danger" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-user" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            @Html.ActionLink("إدارة الطلاب", "../AdminAddStudents/Index", null, new { @style = "color:black;font-weight:500" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+
+                        <p class="btn-lg btn-block btn-info" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-folder-open" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("إدارة ألبومات الصور", "../Albums/Index", null, new { @style = "color:black;font-weight:500" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+
+                    </div>
+                    <div class="col-md-3 " style="padding-top:50px">
+
+                        <p class="btn-lg btn-block btn-success" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-th-large" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("إدارة الصفوف", "../Grades/Index", null, new { @style = "color:black;font-weight:500" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+
+                        <p class="btn-lg btn-block btn-secondary" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-th" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            @Html.ActionLink("إضافة شعب", "../Sections/Index", null, new { @style = "color:black;font-weight:500" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+                        <p class="btn-lg btn-block btn-warning" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-cog" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            @Html.ActionLink("إدارة الأخبار", "../News/Index", null, new { @style = "color:black;font-weight:500" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+
+                    </div>
+                    <div class="col-md-3 " style="padding-top:50px">
+                        <p class="btn-lg btn-block btn-primary" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-book" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            @Html.ActionLink("أدارة أصناف الاخبار ", "../NewsTypes/Index", null, new { @style = "color:black;font-weight:500" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+
+                        <p class="btn-lg btn-block  btn-secondary" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-comment" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            @Html.ActionLink("ارسال sms", "../Sms/SendMessage", null, new { @style = "color:black;font-weight:500" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+                        <p class=" btn-lg btn-block btn-danger" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-barcode" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            @Html.ActionLink("إدارة توزيع الجداول", "../GradeTimeTables/Index", null, new { @style = "color:black;font-weight:500" })
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+    }
+    else if (Request.IsAuthenticated && User.IsInRole("Teachers"))
+    {
+        <div class="thumbnail" style="padding-bottom:100px;height:800px;padding-right:0px">
+            <div style="background:url('../../Content/images/about_schools.jpg') center ;height:200px;">
+            </div>
+
+            <div class="col-md-12" style="background-color:lavender; margin-top:5px;padding-top:5px; height:50px;">
+
+                <h2 style="text-align:center">
+
+                    &nbsp;&nbsp; <span class="glyphicon glyphicon-wrench"></span>مهام المدرس
+                </h2>
+
+            </div>
+
+
+
+            <div class="container" dir="rtl">
+                <div class="row" dir="rtl">
+                    <div class="col-md-3" style="padding-top:50px">
+                        <p class=" btn-lg btn-block btn-success" role="button" style="height:100px;width:200px; direction:rtl ;font-size:15px">
+                            <span class="glyphicon glyphicon-file" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("تنزيل الجداول", "../Notes/GetTables", null, new { @style = "color:black;font-weight:500 ;" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+                        <p class="btn-lg btn-block btn-secondary" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-picture" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("إدارة التفقد", "../Attends/ChosseClass", null, new { @style = "color:black;font-weight:500" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+                    </div>
+                    <div class="col-md-3 " style="padding-top:50px">
+                        <p class=" btn-lg btn-block btn-secondary" role="button" style="height:100px;width:200px; direction:rtl ;font-size:15px">
+                            <span class="glyphicon glyphicon-folder-open" style="margin-left:100px;font-size:30px;position:center"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("إدارة ملفات الوظائف", "../TimeTables/Index", null, new { @style = "color:black;font-weight:500 ;" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+
+                    </div>
+                    <div class="col-md-3 " style="padding-top:50px">
+                        <p class=" btn-lg btn-block btn-danger" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-barcode" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            @Html.ActionLink("إدارة توزيع الملفات", "../GradeTimeTables/Index", null, new { @style = "color:black;font-weight:500" })
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-md-3 " style="padding-top:50px">
+                        <p class="btn-lg btn-block btn-primary" role="button" style="height:100px;width:200px;font-size:15px">
+                            <span class="glyphicon glyphicon-edit" style="margin-left:100px;font-size:30px;"></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("  إدارةالملاحظات", "../Notes/Index", null, new { @style = "color:black;font-weight:500;direction:rtl" })
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+                    </div>
+        </div>
+
+    }
+    else if (Request.IsAuthenticated && User.IsInRole("Students"))
+    {
+          <div class="thumbnail" style="padding-bottom:100px;height:800px;padding-right:0px">
+            <div style="background:url('../../Content/images/about_schools.jpg') center ;height:200px;">
+            </div>
+
+            <div class="col-md-12" style="background-color:lavender; margin-top:5px;padding-top:5px; height:50px;">
+
+                <h2 style="text-align:center">
+
+                    &nbsp;&nbsp;أهلأ وسهلا @ViewBag.userParentName
+                </h2>
+
+            </div>
+
+
+
+      
+                    <div class="container" dir="rtl">
+                        <div class="row" dir="rtl">
+                            <div class="col-md-3" style="padding-top:50px">
+                                <p class=" btn-lg btn-block btn-warning" role="button" style="height:100px;width:200px; direction:rtl ;font-size:15px">
+                                    <span class="glyphicon glyphicon-folder-open" style="margin-left:100px;font-size:30px;"></span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    @Html.ActionLink("تنزيل الجداول", "../Notes/GEtMyTables", null, new { @style = "color:white;font-weight:500 ;" })
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                </p>
+
+                                <br />
+                                <br />
+                                <p class=" btn-lg btn-block btn-info" role="button" style="height:100px;width:200px;font-size:15px">
+                                    <span class="glyphicon glyphicon-check" style="margin-left:100px;font-size:30px;"></span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    @Html.ActionLink("رؤية التفقد", "../Attends/GEtAttends", null, new { @style = "color:white;font-weight:500" })
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </p>
+                            </div>
+                            <div class="col-md-3" style="padding-top:50px">
+
+                                <p class=" btn-lg btn-block btn-success" role="button" style="height:100px;width:200px; direction:rtl ;font-size:15px">
+                                    <span class="glyphicon glyphicon-file" style="margin-left:100px;font-size:30px;"></span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    @Html.ActionLink("تنزيل النشاط", "../Notes/GEtMyHomeWorks", null, new { @style = "color:black;font-weight:500 ;" })
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                </p>
+
+
+
+                            </div>
+                            <div class="col-md-3 " style="padding-top:50px">
+                                <p class="btn-lg btn-block btn-danger" role="button" style="height:100px;width:200px;font-size:15px">
+                                    <span class="glyphicon glyphicon-edit" style="margin-left:100px;font-size:30px;"></span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    @Html.ActionLink("  رؤية الملاحظات", "../Notes/GEtMyNotes", null, new { @style = "color:white;font-weight:500;direction:rtl" })
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                </p>
+                                
+                            </div>
+                            <div class="col-md-3 " style="padding-top:50px">
+                                <p class="btn-lg btn-block btn-dark" role="button" style="height:100px;width:200px;font-size:15px">
+                                    <span class="glyphicon glyphicon-phone" style="margin-left:100px;font-size:30px;"></span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    @Html.ActionLink("  التواصل مع المدرسين", "../Notes/ContactTeachers", null, new { @style = "color:white;font-weight:500;direction:rtl" })
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                </p>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+               
+           
+    }
+}

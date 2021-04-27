@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SchoolWebApp.Models.Photos>
+
+@{
+    ViewBag.Title = "الصور";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!-- banner -->
+<section class="banner-1"></section>
+<!-- //banner -->
+<!-- gallery -->
+<div class="agileits-services text-center py-5">
+
+    <p style="background-color:antiquewhite; font-weight:bolder;font-size:25px;text-align:center;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode'">
+        @ViewBag.album
+    </p>
+    <table class="table">
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+
+                    <a href=" ../../UploadedFiles/@item.PhotoUrl" class="sb">
+                        <figure>
+                            <img src=" ../../UploadedFiles/@item.PhotoUrl" alt=" " class="img-fluid" style="width:350px;height:300px ;" />
+                        </figure>
+                    </a>
+
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    <div class="col-md-12">
+        <p class="btn btn-success col-md-2 btn-lg" style="font-weight:900">
+            @Html.ActionLink("العودة إلى القائمة", "Gallary", null, new { @style = "color:black;font-weight:500" })
+
+
+        </p>
+
+
+    </div>
+</div>

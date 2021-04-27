@@ -1,0 +1,59 @@
+﻿@using WebApplication1.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "تسجيل الدخول";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        
+
+        <section id="loginForm" style=" text-align:right ">
+            <h2>@ViewBag.Title.</h2>
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken();
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+
+            @Html.Label("البريد الإلكتروني", new { @class = "col-md-2 control-label" })
+            <br />
+
+            <div class="col-md-10">
+                <br />
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("كلمة المرور", new { @class = "col-md-2 control-label" })
+            <br />
+
+            <div class="col-md-10">
+                <br />
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.Label("تذكر كلمة المرور والبريد")
+                </div>
+            </div>
+        </div>
+        <div class="form-group" style="float: left">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="تسجيل دخول" class="btn btn-default" />
+            </div>
+        </div>
+
+
+}
+        </section>
+    </div>
+  
+</div>
+

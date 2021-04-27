@@ -1,0 +1,140 @@
+﻿@model SchoolWebApp.Models.Messages
+
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<!-- banner -->
+<section class="banner-1"></section>
+<!-- //banner -->
+<!-- contact -->
+<section class="wthree-row py-5 w3-contact" dir="rtl">
+    <div class="container py-md-4 mt-md-3">
+        <h3 class="heading-agileinfo">
+            تواصل معنا
+            <span style="letter-spacing:0px">نقدم لكم أفضل جودة في التعليم</span>
+        </h3>
+        <div class="row contact-form mt-md-5 pt-5">
+            <div class="col-lg-6 wthree-form-left" style="text-align:right">
+                <!-- contact form grid -->
+                <div class="contact-top1" dir="rtl">
+                    <h5 class="text-dark mb-4 text-capitalize" style="text-align:right">
+                        <i class="glyphicon glyphicon-envelope"></i>
+
+                        ارسل رسالة
+                        <br />
+                    </h5>
+                    <h4 style="text-align:right">
+                        لطلب المساعدة، من فضلك إملأ النموذج ادناه وسوف نقوم بالرد في غضون 24 ساعة عمل
+                    </h4>
+                    <hr />
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Name,"الاسم", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @name = "Name", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email, "البريد الإلكتروني", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @name = "Email", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Subject, "العنوان", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @name = "Subject", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Message, "الرسالة", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @name = "Message", @class = "form-control", @style = "height:200px" } })
+                                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="ارسال" class="btn btn-default"  />
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <!--  //contact form grid ends here -->
+            </div>
+            <!-- contact details -->
+            <div class="col-lg-6 contact-bottom pl-5 mt-lg-0 mt-5" style="text-align:center">
+                <!-- contact details grid1-->
+                <div class="address">
+                    <h5 class="pb-3 text-capitalize">
+                        <i class="glyphicon glyphicon-map-marker"></i>
+
+                        العنوان
+                    </h5>
+                    <address>
+
+
+                        <p class="c-txt">
+                            الياسمين -شارع جبل عرفات
+                            مجمع المحتسب التجاري- بناء رقم 83
+                        </p>
+                        <p class="c-txt">عمان-الأردن</p>
+                    </address>
+                </div>
+                <!-- contact details grid2-->
+                <div class="address my-5">
+                    <h5 class="pb-3 text-capitalize">
+                        <i class="glyphicon glyphicon-earphone"></i>
+
+                        الهاتف
+
+                    </h5>
+                    <p>
+                        962062006896
+                    </p>
+                    <p>
+                        962-0797902497
+                    </p>
+                    <p>
+                        962-0790452034
+                    </p>
+                </div>
+                <!-- contact details grid3 -->
+                <div class="address mt-md-0 mt-3">
+                    <h5 class="pb-3 text-capitalize">
+                        <i class="glyphicon glyphicon-envelope"></i>
+
+                        البريد الإلكتروني
+                    </h5>
+                    <p>
+                        <a href="mailto:Info@madaresonajo.com">Info@madaresonajo.com</a>
+                    </p>
+
+                </div>
+                <!-- //contact details row ends here -->
+            </div>
+        </div>
+        <!-- //contact details container -->
+    </div>
+    <!-- contact map grid -->
+    <div class="map contact-right p-sm-5 px-3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3383.7753255108587!2d35.92323531449604!3d31.994105530798514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b600552aa64d7%3A0x1b9cf3b0489d2b6!2sAyla+International+Schools!5e0!3m2!1sen!2sjo!4v1556719999673!5m2!1sen!2sjo" allowfullscreen></iframe>
+    </div>
+    <!--//contact map grid ends here-->
+</section>
+

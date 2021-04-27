@@ -1,0 +1,155 @@
+﻿@using Microsoft.AspNet.Identity;
+@using System.Web.Mvc;
+@*      Done by    ameera_45149       *@
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        var UserId = User.Identity.GetUserId();
+
+        @Html.AntiForgeryToken()
+
+<ul class="navbar-nav ml-lg-auto text-center" dir="rtl" style="float:right">
+    <li class="nav-item  mr-3">
+        <a class="nav-link" href="~/Home/Index">
+            <i class="glyphicon glyphicon-home"></i>
+
+            الصفحة الرئيسية
+
+        </a>
+    </li>
+    <li class="nav-item  mr-3">
+        <a class="nav-link" href="~/Home/About">  <span class=" glyphicon glyphicon-question-sign"></span>من نحن</a>
+    </li>
+    <li class="nav-item  mr-3">
+        <a class="nav-link" href="~/Home/Services">
+            <i class="glyphicon glyphicon-briefcase"></i>
+            الخدمات
+        </a>
+    </li>
+    @*<li class="nav-item dropdown mr-3">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+                <i class="glyphicon glyphicon-folder-open"></i>
+
+                المزيد
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../Home/Gallary"><h4></h4></a>
+                <a class="dropdown-item" href="../Home/Typo"><h4>Typography</h4></a>
+            </div>
+        </li>*@
+    <li class="nav-item  mr-3">
+        <a class="nav-link" href="~/Home/Gallary">
+            <i class="glyphicon glyphicon-picture"></i>
+
+            ألبومات
+        </a>
+    </li>
+    <li class="nav-item  mr-3">
+        <a class="nav-link" href="~/Home/News">
+            <i class="glyphicon glyphicon-pencil"></i>
+
+            أحدث الأخبار
+        </a>
+    </li>
+    <li class="nav-item mr-3">
+        <a class="nav-link" href="~/Home/Contact">
+            <i class="glyphicon glyphicon-earphone"></i>
+
+            للتواصل معنا
+        </a>
+    </li>
+
+
+
+
+    &nbsp;      &nbsp;
+    &nbsp;      &nbsp;
+
+    <li>
+        <i class="glyphicon glyphicon-user"></i>
+
+        @Html.ActionLink("مرحباً " + User.Identity.Name.Substring(0, 8), "index", "Manage", routeValues: null, htmlAttributes: new { title = "الحساب الشخصي", style = "color:black;font-weight:bold" })
+    </li>
+
+    &nbsp;      &nbsp;
+    &nbsp;      &nbsp;
+
+    <li>
+    <li  >
+        <a href="javascript:document.getElementById('logoutForm').submit()" style = "color:black;font-weight:bold"><i class="glyphicon glyphicon-log-out"></i>   تسجيل الخروج</a>
+
+    </li>
+
+   
+
+
+</ul>
+    }
+}
+else
+{
+    <ul class="navbar-nav ml-lg-auto text-center" dir="rtl" style="float:right">
+        <li class="nav-item  mr-3">
+            <a class="nav-link" href="~/Home/Index">
+                <i class="glyphicon glyphicon-home"></i>
+
+                الصفحة الرئيسية
+
+            </a>
+        </li>
+        <li class="nav-item  mr-3">
+            <a class="nav-link" href="~/Home/About">  <span class=" glyphicon glyphicon-question-sign"></span>من نحن</a>
+        </li>
+        <li class="nav-item  mr-3">
+            <a class="nav-link" href="~/Home/Services">
+                <i class="glyphicon glyphicon-briefcase"></i>
+                الخدمات
+            </a>
+        </li>
+        @*<li class="nav-item dropdown mr-3">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                    <i class="glyphicon glyphicon-folder-open"></i>
+
+                    المزيد
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../Home/Gallary"><h4>الصور</h4></a>
+                    <a class="dropdown-item" href="../Home/Typo"><h4>Typography</h4></a>
+                </div>
+            </li>*@
+        <li class="nav-item  mr-3">
+            <a class="nav-link" href="~/Home/Gallary">
+                <i class="glyphicon glyphicon-picture"></i>
+                الألبومات
+            </a>
+        </li>
+        <li class="nav-item  mr-3">
+            <a class="nav-link" href="~/Home/News">
+                <i class="glyphicon glyphicon-pencil"></i>
+                أحدث الأخبار
+            </a>
+        </li>
+        <li class="nav-item mr-3">
+            <a class="nav-link" href="~/Home/Contact">
+                <i class="glyphicon glyphicon-earphone"></i>
+
+                للتواصل معنا
+            </a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-lg-auto" style="direction:ltr; float:left;padding-right:100px">
+
+        <li class="nav-item mr-3">
+            <a class="nav-link" href="~/Account/Login">
+                تسجيل دخول
+
+                <i class="glyphicon glyphicon-user"></i>
+
+            </a>
+        </li>
+    </ul>
+}

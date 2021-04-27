@@ -1,0 +1,60 @@
+﻿@model SchoolWebApp.Models.TimeTablesTypes
+
+@{
+    ViewBag.Title = "تعديل";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div class="thumbnail" style="padding-bottom:100px;padding-right:0px ;">
+    <div style="background:url('../../Content/images/about_schools.jpg') center ;height:200px;">
+    </div>
+
+    <div class="col-md-12" style="background-color:lavender; margin-top:5px;padding-top:5px; height:50px;">
+
+        <h2 style="text-align:center"><span class="glyphicon glyphicon-edit"></span>
+            تعديل الصنف   &nbsp;&nbsp; 
+        </h2>
+
+    </div>
+
+        @using (Html.BeginForm())
+    {
+         @Html.AntiForgeryToken()
+
+        <div style="padding-right:100px ; text-align: right;">
+            <h4 style="color:black ;" >
+                <span class="glyphicon glyphicon-info-sign"></span>&nbsp;  المعلومات الأساسية:
+            </h4>                    <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group" >
+                @Html.LabelFor(model => model.TimeTablesTypeName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.TimeTablesTypeName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TimeTablesTypeName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TimeTablesTypeDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.TimeTablesTypeDescription, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TimeTablesTypeDescription, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10" style="padding-bottom:10px">
+                    <input type="submit" value="حفظ التغييرات" class="btn btn-success smoothScroll" />
+                </div>
+            </div>
+        </div>
+}
+        <p class="col-md-2 btn-lg btn-primary" role="button" style="margin-right:10px">
+
+            <span class="glyphicon glyphicon-share-alt"></span>
+            @Html.ActionLink("العودة إلى القائمة", "Index", null, new { @style = "color:black;font-weight:500" })
+
+        </p>
+    </div>
+

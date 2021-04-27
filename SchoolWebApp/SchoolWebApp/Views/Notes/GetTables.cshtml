@@ -1,0 +1,86 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<SchoolWebApp.Models.GradeTimeTable>
+
+
+@{
+    ViewBag.Title = "التوزيع";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div class="thumbnail" style="padding-bottom:100px;padding-right:0px ;">
+    <div style="background:url('../../Content/images/about_schools.jpg') center ;height:200px;">
+    </div>
+
+    <div class="col-md-12" style="background-color:lavender; margin-top:5px;padding-top:5px; height:50px;">
+
+        <h2 style="text-align:center">
+            <span class="glyphicon  glyphicon-barcode"></span>
+            توزيع الجداول   &nbsp;&nbsp;
+        </h2>
+
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="table-responsive col-md-12" style="padding:0px">
+                <table class="table table-striped table-hover">
+                    <tr style="background-color:lavenderblush">
+                        <th>
+                            @Html.Label("الصف")
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.First().Section.SectionName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.First().TimeTable.TableTitle)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.First().TimeTable.TableTitleDetails)
+                        </th>
+                        <th>          </th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Grade.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Section.SectionName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimeTable.TableTitle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimeTable.TableTitleDetails)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Download Here", "DownloadExampleFiles", "Notes", new { fileName = item.TimeTable.TableTitleURL }, new { @target = "_blank" })
+
+                        </td>
+                    </tr>
+                    }
+
+                </table>
+                @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }))
+
+            </div>
+            <p class="col-md-2 btn-lg btn-primary" role="button">
+
+                <span class="glyphicon glyphicon-share-alt"></span>
+                @Html.ActionLink("العودة إلى القائمة", "../home/index", null, new { @style = "color:black;font-weight:500" })
+
+
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+

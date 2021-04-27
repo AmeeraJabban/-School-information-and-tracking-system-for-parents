@@ -1,0 +1,74 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<SchoolWebApp.Models.News>
+@{
+    ViewBag.Title = "أحدث الأخبار";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+}
+    <!-- banner -->
+    <section class="banner-1"></section>
+    <!-- //banner -->
+    <!-- gallery -->
+    <div class="agileits-services text-center py-5">
+            <p style="background-color:antiquewhite; font-weight:bolder;font-size:25px;text-align:center;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode'">
+                أحدث الأخبار
+                </p>
+
+
+        </div>
+
+        <div id="blog" class="parallax-section">
+
+            <div id="blog" class="parallax-section">
+
+                <div class="wow fadeInUp col-md-12 col-sm-12">
+                    @foreach (var sub_item in Model)
+    {
+                <div class="thumbnail" style="background-color:ghostwhite;height:35px; text-align:center">
+                    <h2>
+                        @Html.DisplayFor(ModelItem => sub_item.NewsTitle).ToString()
+                    </h2>
+                </div>
+
+                <div class="blog-thumb " style=" height:300px;padding-right:0px; padding-bottom:0px ; margin-bottom:0px; background-image: url(../../uploads/@sub_item.NewsImage); background-size: fixed;background-position: center;background-repeat: no-repeat;text-align:right">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                </div>
+
+
+                <p style="text-align:center">
+                    @Html.DisplayFor(ModelItem => sub_item.NewsSummary).ToString()
+                    @Html.ActionLink("لقراءة المزيد..", "Details", new { Id = sub_item.Id })
+
+                </p>
+                <br />
+                <br />
+                <br />
+                <br />
+
+}
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+            @Html.PagedListPager(Model, Page => Url.Action("News", new { Page }))
+        </div>
+    </div>
+
+

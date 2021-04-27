@@ -1,0 +1,38 @@
+﻿@model SchoolWebApp.Models.Messages
+
+@{
+    ViewBag.Title = "رسالة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div class="thumbnail" style="padding-bottom:100px;padding-right:0px ;">
+    <div style="background:url('../../Content/images/about_schools.jpg') center ;height:200px;">
+    </div>
+    <div class="col-md-12" style="background-color:lavender; margin-top:5px;padding-top:5px; height:50px;">
+
+        <h2 style="text-align:center">
+            <span class="glyphicon glyphicon-edit"></span>
+            إرسال رسالة   &nbsp;&nbsp;
+        </h2>
+
+    </div>
+    <div class="col-12 " style="height:250px">
+        <div class="col-4">&nbsp;</div>
+        <div class="col-4">
+            <br />
+            <br />
+            <br />
+            اضغط على الرابط التالي :
+            <a href="mailto:@ViewBag.email">@ViewBag.email</a>
+        </div>
+        <div class="col-4"></div>
+    </div>
+    <p class="col-md-2 btn-lg btn-primary" role="button" style="margin-right:10px;text-align:right">
+
+        <span class="glyphicon glyphicon-share-alt"></span>
+        &nbsp;
+
+        @Html.ActionLink("العودة إلى القائمة ", "Index", null, new { @style = "color:black;font-weight:500" })
+
+    </p>
+
+</div>

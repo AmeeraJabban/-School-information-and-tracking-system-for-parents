@@ -1,0 +1,169 @@
+﻿
+@using SchoolWebApp.Models
+@model AddNewStudentViewModel
+@{
+    ViewBag.Title = "إضافة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="thumbnail" style="padding-bottom:100px;padding-right:0px ;">
+    <div style="background:url('../../Content/images/about_schools.jpg') center ;height:200px;">
+    </div>
+
+    <div class="col-md-12" style="background-color:lavender; margin-top:5px;padding-top:5px; height:50px;">
+
+        <h2 style="text-align:center">
+            <span class="glyphicon glyphicon-plus"></span>
+            إضافة طالب جديد   &nbsp;&nbsp;
+        </h2>
+
+    </div>
+
+    @using (Html.BeginForm("Create", "AdminAddStudents", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" style="text-align:right">
+            <h4>بيانات الطالب</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+            <div class="form-group">
+                @Html.Label("الاسم بالكامل", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label(" العمر", htmlAttributes: new { @class = "control -label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label(" الجنس", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Sex, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Sex, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("اسم ولي الأمر", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ParentName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ParentName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("العنوان", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("البريد الالكتروني", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("رقم الهاتف", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.Label("قم بتحميل صورة شخصية", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" name="upload" id="upload-file">
+                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Grades, "الصف", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.GradeId, Model.Grades, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Grades, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group"> 
+                @Html.LabelFor(model => model.Sections, "الشعبة", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+
+                    @Html.DropDownListFor(model => model.SectionId, Model.Sections, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Sections, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <p class="col-md-2 btn-lg btn-primary" role="button" style="margin-right:10px;text-align:right">
+
+        <span class="glyphicon glyphicon-share-alt"></span>
+        &nbsp;
+
+        @Html.ActionLink("العودة إلى القائمة ", "Index", null, new { @style = "color:black;font-weight:500" })
+
+    </p>
+
+</div>
+@section scripts{
+
+    <script>
+
+        $(function () {
+            $("#save").click(function () {
+                if ($("#upload-file").val() == "") {
+                    $("#ErrorDiv").fadeIn();
+                    $("#error").append("قم بتحميل صورة مناسبة للخبر");
+                    return false;
+
+                }
+                var filename = document.getElementById("upload-file").value;
+                var extensionImg = filename.substr(filename.lastIndexOf('.') + 1);
+                var validextention = ['jpg', 'jepj', 'png', 'gif', 'bmp'];
+                if ($.inArray(extensionImg, validextention) == -1) {
+
+                    $("#ErrorDiv").fadeIn();
+                    $("#error").append("قم بتحميل صورة مناسبة للخبر");
+                    return false;
+                }
+                var filesize = document.getElementById("upload-file").files[0].size / 1024 / 1024;
+                if (filesize > 2) {
+
+                    $("#ErrorDiv").fadeIn();
+                    $("#error").append("هذه الصورة ذات حجم كبير.");
+                    return false;
+                }
+
+
+            });
+
+
+        });
+
+    </script>
+}
+</div>

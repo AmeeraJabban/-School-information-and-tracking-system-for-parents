@@ -1,0 +1,111 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<SchoolWebApp.Models.News>
+
+@{
+    ViewBag.Title = "الاخبار";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="thumbnail" style="padding-bottom:100px;padding-right:0px ;">
+    <div style="background:url('../../Content/images/about_schools.jpg') center ;height:200px;">
+    </div>
+
+    <div class="col-md-12" style="background-color:lavender; margin-top:5px;padding-top:5px; height:50px;">
+
+        <h2 style="text-align:center">
+            <span class="glyphicon  glyphicon-cog"></span>
+            الأخبار   &nbsp;&nbsp;
+        </h2>
+
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3 thumbnail">
+                <p class="btn btn-block btn-success glyphicon glyphicon-plus" style="height:30px;font-size:medium">
+                    @Html.ActionLink("  إضافة  خبر  ", "Create", null, new { @style = " color:black;font-weight:500;font-size:larger" })
+                </p>
+
+
+            </div>
+            <div class="table-responsive col-md-12" style="padding:0px">
+                <table class="table table-striped table-hover">
+                    <tr style="background-color:lavenderblush">
+                        <th style="font-weight:900;font-size:larger">
+
+                            @Html.DisplayNameFor(model => model.First().NewsType.NewsTypeName)
+                        </th>
+                        <th style="font-weight:900;font-size:larger">
+                            @Html.DisplayNameFor(model => model.First().NewsTitle)
+                        </th>
+                        <th style="font-weight:900;font-size:larger">
+                            @Html.DisplayNameFor(model => model.First().NewsSummary)
+                        </th>
+
+                        <th style="font-weight:900;font-size:larger">
+                            @Html.DisplayNameFor(model => model.First().NewsDetails)
+                        </th>
+                        <th style="font-weight:900;font-size:larger">
+                            @Html.DisplayNameFor(model => model.First().NewsImage)
+                        </th>
+                        <th style="font-weight:900;font-size:larger">
+                            @Html.DisplayNameFor(model => model.First().NewsDate)
+                        </th>
+                        <th style="width:100px"></th>
+
+                    </tr>
+
+                    @foreach (var item in Model)
+            {
+                    <tr>
+                        <td style="font-size:large">
+                            @Html.DisplayFor(modelItem => item.NewsType.NewsTypeName).ToString().Substring(0, 5)....
+                        </td>
+                        <td style="font-size:large">
+                            @Html.DisplayFor(modelItem => item.NewsTitle)
+                        </td>
+                        <td style="font-size:large">
+                            @Html.DisplayFor(modelItem => item.NewsSummary).ToString().Substring(0, 20)....
+                        </td>
+
+                        <td style="font-size:large">
+                            @Html.DisplayFor(modelItem => item.NewsDetails).ToString().Substring(0, 50)....
+                        </td>
+                        <td style="font-size:large">
+                            <img src="~/uploads/@Html.DisplayFor(modelItem => item.NewsImage)" class="thumbnail" style="width:90px; height:70px" />
+
+                        </td>
+                        <td style="font-size:large">
+                            @Html.DisplayFor(modelItem => item.NewsDate)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", new { id = item.Id }, new { @class = "glyphicon glyphicon-edit", title = "تعديل" })  |
+                            @Html.ActionLink(" ", "Details", new { id = item.Id }, new { @class = "glyphicon glyphicon-eye-open", title = "تفاصيل" })  |
+                            @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "glyphicon glyphicon-trash", title = "حذف" })
+
+                        </td>
+                    </tr>
+    }
+
+                </table>
+            </div>
+        </div>
+            @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }))
+
+
+
+            <p class="col-md-2 btn-lg btn-primary" role="button">
+
+                <span class="glyphicon glyphicon-share-alt"></span>
+                @Html.ActionLink("العودة إلى القائمة", "../home/index", null, new { @style = "color:black;font-weight:500" })
+
+
+            </p>
+       
+
+</div>
+</div>

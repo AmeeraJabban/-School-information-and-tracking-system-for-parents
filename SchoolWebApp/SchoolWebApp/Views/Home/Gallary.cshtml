@@ -1,0 +1,54 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<SchoolWebApp.Models.Albums>
+@{
+    ViewBag.Title = "Gallary";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!-- banner -->
+<section class="banner-1"></section>
+<!-- //banner -->
+<!-- gallery -->
+<div class="agileits-services text-center py-5">
+    <div class="container py-md-4 mt-md-3">
+        <h3 class="heading-agileinfo">ألبومات الصور <span>نسعى لتقديم تعليم أفضل</span></h3>
+
+
+    </div>
+
+    <div class="w3ls_gallery_grids mt-md-5 pt-5">
+        <div class="row agileits_w3layouts_gallery_grid">
+            <div class="col-md-12 ag_gal agileits_w3layouts_gallery_grid1 w3layouts_gallery_grid1 hover14">
+                <div class="w3_agile_gallery_effect" >
+                    @foreach (var sub_item in Model)
+    {
+
+                <br />
+                <br />
+                 <br />
+                 <div class="col-md-4">
+                     <p style="background-color:antiquewhite; font-weight:bolder;font-size:25px;text-align:center;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode'">
+                         @Html.DisplayFor(ModelItem => sub_item.AlbumTitle)
+
+                     </p>
+                     <p>
+                         <a href="../../UploadedFiles/@sub_item.Photos.FirstOrDefault().PhotoUrl.ToString()" class="sb" title="@sub_item.AlbumTitle">
+                <img src=" ../../UploadedFiles/@sub_item.Photos.FirstOrDefault().PhotoUrl.ToString()" alt=" " class="img-fluid" style="width:250px;height:200px" />
+        </a>
+                         @Html.DisplayFor(ModelItem => sub_item.AlbumDate).ToString().Substring(0, 10)
+
+                         @Html.DisplayFor(ModelItem => sub_item.AlbumDetails).ToString()
+                         <br>
+                         @Html.ActionLink("لرؤية المزيد..", "Photos", new { Id = sub_item.Id })
+
+                     </p>
+                 </div>
+}
+                </div>
+                </div>
+
+        </div>
+        @Html.PagedListPager(Model, Page => Url.Action("Gallary", new { Page }))
+    </div>
+</div>

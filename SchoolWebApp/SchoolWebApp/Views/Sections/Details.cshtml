@@ -1,0 +1,72 @@
+﻿@model SchoolWebApp.Models.Sections
+
+@{
+    ViewBag.Title = "التفاصيل";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="thumbnail" style="padding-bottom:100px;padding-right:0px ;">
+    <div style="background:url('../../Content/images/about_schools.jpg') center ;height:200px;">
+    </div>
+
+    <div class="col-md-12" style="background-color:lavender; margin-top:5px;padding-top:5px; height:50px;">
+
+        <h2 style="text-align:center">
+            <span class="glyphicon glyphicon-info-sign"></span>
+            تفاصيل الشعبة   &nbsp;&nbsp;
+        </h2>
+
+    </div>
+    <div style="padding-right:100px ; text-align: right;">
+        <h4 style="color:black ;">
+            <span class="glyphicon glyphicon-info-sign"></span>&nbsp;  المعلومات الأساسية:
+        </h4>                    <hr />
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
+            <table class="table  table-hover" style="margin-bottom:30px">
+
+                <tr>
+                    <th style="border-top:0px; border-bottom: 1px solid #ddd; font-weight:900;font-size:larger ">
+                        @Html.DisplayNameFor(model => model.SectionName)
+                    </th>
+                    <td style="border-top:0px; border-bottom: 1px solid #ddd;font-size:large">
+
+                        @Html.DisplayFor(model => model.SectionName)
+                    </td>
+                </tr>
+                <tr>
+                    <th style="border-top:0px; border-bottom: 1px solid #ddd; font-weight:900;font-size:larger ">
+
+                        @Html.DisplayNameFor(model => model.Sectionprop)
+                    </th>
+                    <td style="border-top:0px; border-bottom: 1px solid #ddd;font-size:large ">
+
+                        @Html.DisplayFor(model => model.Sectionprop)
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="col-md-8">
+            <p class="col-md-4 btn-lg btn-success" role="button" style="margin-right:10px">
+
+                <span class="glyphicon glyphicon-edit"></span>
+                &nbsp;
+                @Html.ActionLink("تعديل", "Edit", new { id = Model.Id }, new { @style = "color:black;font-weight:500" })
+
+            </p>
+            <p class="col-md-4 btn-lg btn-primary" role="button" style="margin-right:10px">
+
+                <span class="glyphicon glyphicon-share-alt"></span>
+                @Html.ActionLink("العودة إلى القائمة", "Index", null, new { @style = "color:black;font-weight:500" })
+
+            </p>
+
+
+        </div>
+
+        <div class="col-md-12">
+            <p></p>
+        </div>
+    </div>
+</div>

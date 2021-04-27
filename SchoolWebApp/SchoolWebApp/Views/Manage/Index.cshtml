@@ -1,0 +1,28 @@
+﻿@model WebApplication1.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2 style="text-align:right">تغيير كلمة المرور.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div style="height:150px">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="text-align:right">Password:</dt>
+        <dd style="text-align:right">
+            [
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("اضغط هنا لتغيير كلمة السر", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetPassword")
+            }
+            ]
+        </dd>
+        
+       
+    </dl>
+</div>
